@@ -1,0 +1,5 @@
+FROM openjdk:8u131-jre-alpine
+ADD target/java-container.jar /usr/src/myapp/
+WORKDIR /usr/src/myapp
+EXPOSE 8080
+CMD java -XX:+PrintFlagsFinal -XX:+PrintGCDetails $JAVA_OPTIONS -jar java-container.jar
